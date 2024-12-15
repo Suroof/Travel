@@ -1,0 +1,487 @@
+.destinations-page {
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+.destinations-hero {
+  height: 40vh;
+  background: linear-gradient(45deg, #2c9caf, #70bdca);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.destinations-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.search-section {
+  padding: 2rem;
+  background: white;
+  margin-top: -50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid #eee;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2c9caf;
+}
+
+.search-button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #2c9caf;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-button:hover {
+  background: #268391;
+  transform: translateY(-2px);
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 50px;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.dest-card {
+  --bg-color: #ceb2fc;
+  --bg-color-light: #f0e7ff;
+  --text-color-hover: #fff;
+  --box-shadow-color: rgba(206, 178, 252, 0.48);
+
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+.dest-card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+}
+
+.dest-card:hover .dest-overlay {
+  transform: scale(4) translateZ(0);
+}
+
+.dest-card:hover .dest-circle {
+  border-color: var(--bg-color-light);
+  background: var(--bg-color);
+}
+
+.dest-card:hover .dest-circle:after {
+  background: var(--bg-color-light);
+}
+
+.dest-card:hover .dest-content p {
+  color: var(--text-color-hover);
+}
+
+.dest-card:active {
+  transform: scale(1) translateZ(0);
+  box-shadow: 0 15px 24px rgba(0,0,0,0.11),
+    0 15px 24px var(--box-shadow-color);
+}
+
+.dest-circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-out;
+  margin-top: 20px;
+}
+
+.dest-circle:after {
+  content: "";
+  width: 145px;
+  height: 145px;
+  display: block;
+  position: absolute;
+  background: var(--bg-color);
+  border-radius: 50%;
+  transition: opacity 0.3s ease-out;
+}
+
+.dest-circle img {
+  z-index: 10000;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translateZ(0);
+}
+
+.dest-overlay {
+  width: 145px;
+  height: 145px;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--bg-color);
+  top: 85px;
+  left: 78px;
+  z-index: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.dest-content {
+  z-index: 1;
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dest-content h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 16px 0 12px;
+  color: #2c3e50;
+}
+
+.dest-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  transition: color 0.3s ease-out;
+  line-height: 1.6;
+}
+
+.dest-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--bg-color);
+  margin: 15px 0;
+}
+
+.dest-button {
+  padding: 12px 30px;
+  background: var(--bg-color);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.dest-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--box-shadow-color);
+}
+
+/* 为每个目的地设置不同的主题色 */
+.dest-card:nth-child(1) {
+  --bg-color: #ffd861;
+  --bg-color-light: #ffeeba;
+  --box-shadow-color: rgba(255, 216, 97, 0.48);
+}
+
+.dest-card:nth-child(2) {
+  --bg-color: #7dd7d8;
+  --bg-color-light: #b4f0f0;
+  --box-shadow-color: rgba(125, 215, 216, 0.48);
+}
+
+.dest-card:nth-child(3) {
+  --bg-color: #ff8a8a;
+  --bg-color-light: #ffc4c4;
+  --box-shadow-color: rgba(255, 138, 138, 0.48);
+}
+
+/* 响应式布局调整 */
+@media (max-width: 1200px) {
+  .dest-grid {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+
+@media (max-width: 768px) {
+  .dest-grid {
+    grid-template-columns: repeat(1, 300px);
+    gap: 30px;
+  }
+
+  .dest-card {
+    width: 300px;
+    height: 400px;
+  }
+
+  .dest-circle {
+    width: 140px;
+    height: 140px;
+  }
+
+  .dest-circle:after {
+    width: 125px;
+    height: 125px;
+  }
+
+  .dest-circle img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .dest-overlay {
+    width: 125px;
+    height: 125px;
+    top: 85px;
+    left: 88px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.book-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #2c9caf;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-button:hover {
+  background: #268391;
+  transform: translateY(-2px);
+}
+
+/* 预订弹窗样式 */
+.booking-modal {
+  max-width: 800px;
+}
+
+.destination-preview {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 15px;
+}
+
+.destination-preview img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.preview-info {
+  flex: 1;
+}
+
+.preview-info .price {
+  font-size: 24px;
+  color: #2c9caf;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.attractions {
+  margin-top: 15px;
+}
+
+.attractions h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.attractions ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.attractions li {
+  background: #e9ecef;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.price-calculation {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.calc-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+.calc-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px dashed #dee2e6;
+  font-weight: 700;
+  color: #2c9caf;
+  font-size: 1.2rem;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2c9caf;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 15px 30px;
+  background: #2c9caf;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background: #268391;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(44, 156, 175, 0.2);
+}
+
+@media (max-width: 768px) {
+  .destination-preview {
+    flex-direction: column;
+  }
+
+  .destination-preview img {
+    width: 100%;
+    height: 200px;
+  }
+}

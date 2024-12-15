@@ -1,0 +1,198 @@
+.about-page {
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+.about-hero {
+  height: 40vh;
+  background: linear-gradient(45deg, #2c9caf, #70bdca);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.company-intro {
+  margin-top: -80px;
+}
+
+.intro-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.intro-card h2 {
+  color: #2c9caf;
+  margin-bottom: 20px;
+}
+
+.company-values {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.value-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+}
+
+.value-card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.team-section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.member-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.member-info h3 {
+  color: #333;
+  margin: 0;
+}
+
+.member-info h4 {
+  color: #2c9caf;
+  margin: 10px 0;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: rgb(61, 106, 255);
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 0.2s ease-in;
+}
+
+.social-button:hover {
+  background: rgb(61, 106, 255);
+  color: white;
+  box-shadow: 0 0 30px 5px rgba(61, 106, 255, 0.815);
+}
+
+.achievements {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.achievement-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+}
+
+.achievement-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c9caf;
+  margin-bottom: 10px;
+}
+
+.achievement-text {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .company-intro {
+    margin-top: -40px;
+  }
+
+  .intro-card {
+    padding: 20px;
+  }
+}
